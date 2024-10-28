@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>cek_bmi.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #5c6370; font-style: italic;}
+.s1 { color: #bbbbbb;}
+.s2 { color: #d55fde; font-style: italic;}
+.s3 { color: #89ca78;}
+.s4 { color: #2bbac5;}
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+cek_bmi.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% md 
+</span><span class="s1">### Nama: Mohamad Arvin Fadriansyah 
+</span><span class="s0">#%% 
+</span><span class="s2">from </span><span class="s1">bmi_calculator </span><span class="s2">import </span><span class="s1">hitung_bmi, interpretasi_bmi</span>
+<span class="s0">#%% 
+</span><span class="s2">try</span><span class="s1">:</span>
+    <span class="s1">massa = float(input(</span><span class="s3">&quot;Masukkan berat badan (kg): &quot;</span><span class="s1">))</span>
+    <span class="s1">tinggi = float(input(</span><span class="s3">&quot;Masukkan tinggi badan (m): &quot;</span><span class="s1">))</span>
+
+    <span class="s1">print(</span><span class="s3">f&quot;BMI Anda: </span><span class="s4">{</span><span class="s1">hitung_bmi(massa, tinggi)</span><span class="s4">:</span><span class="s3">.2f</span><span class="s4">}</span><span class="s3">&quot;</span><span class="s1">)</span>
+    <span class="s1">print(</span><span class="s3">f&quot;Interpretasi: </span><span class="s4">{</span><span class="s1">interpretasi_bmi(nilai_bmi)</span><span class="s4">}</span><span class="s3">&quot;</span><span class="s1">)</span>
+<span class="s2">except </span><span class="s1">ValueError </span><span class="s2">as </span><span class="s1">e:</span>
+    <span class="s1">print(e)</span>
+<span class="s0">#%% 
+</span></pre>
+</body>
+</html>

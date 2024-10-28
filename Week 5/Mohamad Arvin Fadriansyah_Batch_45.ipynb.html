@@ -1,0 +1,265 @@
+<html>
+<head>
+<title>Mohamad Arvin Fadriansyah_Batch_45.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #5c6370; font-style: italic;}
+.s1 { color: #d55fde; font-style: italic;}
+.s2 { color: #bbbbbb;}
+.s3 { color: #89ca78;}
+.s4 { color: #d19a66;}
+.s5 { color: #2bbac5;}
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Mohamad Arvin Fadriansyah_Batch_45.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% 
+</span><span class="s1">import </span><span class="s2">pandas </span><span class="s1">as </span><span class="s2">pd</span>
+<span class="s0">#%% md 
+</span><span class="s2"># A. Introduction to Pandas DataFrame and Transformation (45pts) 
+</span><span class="s0">#%% md 
+</span><span class="s2">## Beginner 
+</span><span class="s0">#%% md 
+</span><span class="s2">### 1. Membuat DataFrame Manual (5pts) 
+ 
+Buatlah dataframe secara manual seperti gambar dibawah ini. 
+ 
+**Expected Result:** 
+ 
+![Expected Result](assets/homework_exercise_1_result.png) 
+</span><span class="s0">#%% 
+# Nomor 1</span>
+<span class="s2">data = {</span>
+    <span class="s3">&quot;name&quot;</span><span class="s2">: [</span><span class="s3">&quot;Fiqry&quot;</span><span class="s2">, </span><span class="s3">&quot;Iqbal&quot;</span><span class="s2">, </span><span class="s3">&quot;Monica&quot;</span><span class="s2">, </span><span class="s3">&quot;Rama&quot;</span><span class="s2">, </span><span class="s3">&quot;Johan&quot;</span><span class="s2">],</span>
+    <span class="s3">&quot;age&quot;</span><span class="s2">: [</span><span class="s4">23</span><span class="s2">, </span><span class="s4">21</span><span class="s2">, </span><span class="s4">22</span><span class="s2">, </span><span class="s4">24</span><span class="s2">, </span><span class="s4">26</span><span class="s2">],</span>
+    <span class="s3">&quot;phone_number&quot;</span><span class="s2">: [</span><span class="s3">&quot;+62813123414&quot;</span><span class="s2">, </span><span class="s3">&quot;+6287842464&quot;</span><span class="s2">, </span><span class="s3">&quot;+62813125554&quot;</span><span class="s2">, </span><span class="s3">&quot;+6287834464&quot;</span><span class="s2">, </span><span class="s3">&quot;+62813113414&quot;</span><span class="s2">],</span>
+    <span class="s3">&quot;ielts_score&quot;</span><span class="s2">: [</span><span class="s4">6.5</span><span class="s2">, </span><span class="s1">None</span><span class="s2">, </span><span class="s4">7.5</span><span class="s2">, </span><span class="s4">6.5</span><span class="s2">, </span><span class="s4">8.0</span><span class="s2">]</span>
+<span class="s2">}</span>
+<span class="s2">df = pd.DataFrame(data)</span>
+<span class="s2">df</span>
+<span class="s0">#%% md 
+</span><span class="s2">### 2. Analisa Sederhana DataFrame (10pts) 
+ 
+Lakukan import `application_processed.csv` data kedalam notebook (5pts) dan carilah beberapa informasi pada dataset `application_processed` (5pts) dan jawablah beberapa pertanyaan sebagai berikut: 
+ 
+a. Column apa saja yang memiliki nilai NaN / None? 
+b. Berapa rata-rata pada column `amount_income_total`? 
+c. Berapa median pada column `amount_income_total`? 
+ 
+**Hint**: 
+- Menggunakan operasi dasar DataFrame pada topik Introduction Pandas DataFrame and Transformation 
+ 
+</span><span class="s0">#%% 
+## Your code below here</span>
+<span class="s2">df2 = pd.read_csv(</span><span class="s3">'application_processed.csv'</span><span class="s2">)</span>
+<span class="s2">df2</span>
+<span class="s0">#%% 
+# Nomor 1</span>
+<span class="s2">df2.isnull().sum()</span>
+<span class="s0">#%% md 
+</span><span class="s2">### Nomor 2a 
+Kolom yang memiliki Nan / None adalah kolom 'occupation_type' yang berjumlah 40095 baris Nan / None  
+</span><span class="s0">#%% 
+# Nomor 2b</span>
+<span class="s2">rata_rata_income = df2[</span><span class="s3">'amount_income_total'</span><span class="s2">].mean()</span>
+<span class="s2">print(</span><span class="s3">f'Rata Rata amount_income_total: </span><span class="s5">{</span><span class="s2">rata_rata_income</span><span class="s5">}</span><span class="s3">'</span><span class="s2">)</span>
+<span class="s0">#%% 
+# Nomor 2c</span>
+<span class="s2">median_income = df2[</span><span class="s3">'amount_income_total'</span><span class="s2">].median()</span>
+<span class="s2">print(</span><span class="s3">f'Median amount_income_total: </span><span class="s5">{</span><span class="s2">median_income</span><span class="s5">}</span><span class="s3">'</span><span class="s2">)</span>
+<span class="s0">#%% md 
+</span><span class="s2">## Intermediate 
+</span><span class="s0">#%% md 
+</span><span class="s2">### 3. Mengolah Dataset (30pts) 
+ 
+Dengan menggunakan dataset `application_processed.csv` buatlah dataframe baru dengan ketentuan: 
+1. Ambil semua users yang memiliki `email`. (ditandai dengan nilai pada column `flag_email` = 1) dan tidak memilik data `duplicates`. (5pts) 
+2. Buatlah column baru bernama `has_car_and_property` dimana nilainya merupakan range dari `0-1`. `1` apabila `flag_own_car` bernilai `1` dan `flag_own_property` bernilai `1`. `0` apabila terdapat atau semua nilai pada column `flag_own_car` dan `flag_own_property` terdapat angka 0. (5pts) 
+3. Ambil column yang diperlukan yaitu `id`, `gender`, `has_car_and_property`, `income_type`, `education_type`, `family_status`, `housing_type`, `occupation_type`, `amount_income_total`. (5pts) 
+4. Lakukan filter dengan ketentuan sebagai berikut: (5pts) 
+    - Memiliki `car` dan `property` 
+    - Tidak ada nilai null pada column `occupation_type` 
+    - Memiliki value pada column `occupation_type` dengan pola `staff`. 
+5. Sudah dilakukan sorting berdasarkan `income_type` dari `A-Z` dan `amount_income_total` dari `besar ke kecil`. (5pts) 
+6. Simpan kedalam bentuk `.csv` dengan nama `homework_3_result.csv`. (5pts) 
+ 
+**Expected Result:** 
+ 
+![Expected Result](assets/homework_exercise_3_result.png) 
+</span><span class="s0">#%% 
+</span><span class="s2">df3 = pd.read_csv(</span><span class="s3">'application_processed.csv'</span><span class="s2">)</span>
+<span class="s2">df3</span>
+<span class="s0">#%% md 
+</span><span class="s2">1. Ambil semua users yang memiliki `email`. (ditandai dengan nilai pada column `flag_email` = 1) dan tidak memilik data `duplicates`. (5pts) 
+</span><span class="s0">#%% 
+</span><span class="s2">df3_with_email = df3[df3[</span><span class="s3">'flag_email'</span><span class="s2">] == </span><span class="s1">True</span><span class="s2">].drop_duplicates()</span>
+<span class="s2">df3_with_email</span>
+<span class="s0">#%% md 
+</span><span class="s2">2. Buatlah column baru bernama `has_car_and_property` dimana nilainya merupakan range dari `0-1`. `1` apabila `flag_own_car` bernilai `1` dan `flag_own_property` bernilai `1`. `0` apabila terdapat atau semua nilai pada column `flag_own_car` dan `flag_own_property` terdapat angka 0. (5pts) 
+</span><span class="s0">#%% 
+</span><span class="s2">df3_with_email[</span><span class="s3">'has_car_and_property'</span><span class="s2">] = df3_with_email[[</span><span class="s3">'flag_own_car'</span><span class="s2">, </span><span class="s3">'flag_own_property'</span><span class="s2">]].apply(</span>
+    <span class="s1">lambda </span><span class="s2">row: </span><span class="s4">1 </span><span class="s1">if </span><span class="s2">(row[</span><span class="s3">'flag_own_car'</span><span class="s2">] == </span><span class="s4">1</span><span class="s2">) </span><span class="s1">and </span><span class="s2">(row[</span><span class="s3">'flag_own_property'</span><span class="s2">] == </span><span class="s4">1</span><span class="s2">) </span><span class="s1">else </span><span class="s4">0</span><span class="s2">, axis=</span><span class="s4">1</span>
+<span class="s2">)</span>
+<span class="s2">df3_with_email</span>
+<span class="s0">#%% md 
+</span><span class="s2">3. Ambil column yang diperlukan yaitu `id`, `gender`, `has_car_and_property`, `income_type`, `education_type`, `family_status`, `housing_type`, `occupation_type`, `amount_income_total`. (5pts) 
+</span><span class="s0">#%% 
+</span><span class="s2">df3_dengan_kolom_yang_diperlukan = df3_with_email[[</span><span class="s3">'id'</span><span class="s2">,</span><span class="s3">'gender'</span><span class="s2">,</span><span class="s3">'has_car_and_property'</span><span class="s2">,</span><span class="s3">'income_type'</span><span class="s2">,</span><span class="s3">'education_type'</span><span class="s2">,</span><span class="s3">'family_status'</span><span class="s2">,</span><span class="s3">'housing_type'</span><span class="s2">,</span><span class="s3">'occupation_type'</span><span class="s2">,</span><span class="s3">'amount_income_total'</span><span class="s2">]]</span>
+<span class="s2">df3_dengan_kolom_yang_diperlukan</span>
+<span class="s0">#%% md 
+</span><span class="s2">4. Lakukan filter dengan ketentuan sebagai berikut: (5pts) 
+    - Memiliki `car` dan `property` 
+    - Tidak ada nilai null pada column `occupation_type` 
+    - Memiliki value pada column `occupation_type` dengan pola `staff`. 
+</span><span class="s0">#%% 
+</span><span class="s2">df3_dengan_filter_yang_diperlukan = (</span>
+    <span class="s2">df3_dengan_kolom_yang_diperlukan)[</span>
+    <span class="s2">(df3_dengan_kolom_yang_diperlukan[</span><span class="s3">'has_car_and_property'</span><span class="s2">] ==</span><span class="s4">1</span><span class="s2">) &amp;</span>
+    <span class="s2">(df3_dengan_kolom_yang_diperlukan[</span><span class="s3">'occupation_type'</span><span class="s2">].notnull()) &amp;</span>
+    <span class="s2">(df3_dengan_kolom_yang_diperlukan[</span><span class="s3">'occupation_type'</span><span class="s2">].str.lower().str.contains(</span><span class="s3">'staff'</span><span class="s2">))</span>
+    
+<span class="s2">]</span>
+<span class="s2">df3_dengan_filter_yang_diperlukan</span>
+<span class="s0">#%% md 
+</span><span class="s2">5. Sudah dilakukan sorting berdasarkan `income_type` dari `A-Z` dan `amount_income_total` dari `besar ke kecil`. (5pts) 
+</span><span class="s0">#%% 
+</span><span class="s2">df3_sorting= df3_dengan_filter_yang_diperlukan.sort_values([</span><span class="s3">'income_type'</span><span class="s2">,</span><span class="s3">'amount_income_total'</span><span class="s2">], ascending=[</span><span class="s1">True</span><span class="s2">,</span><span class="s1">False</span><span class="s2">])</span>
+<span class="s2">df3_sorting</span>
+<span class="s0">#%% md 
+</span><span class="s2">6. Simpan kedalam bentuk `.csv` dengan nama `homework_3_result.csv`. (5pts) 
+ 
+</span><span class="s0">#%% 
+</span><span class="s2">df3_result = df3_sorting.to_csv(</span><span class="s3">'homework_3_result.csv'</span><span class="s2">, index=</span><span class="s1">False</span><span class="s2">)</span>
+<span class="s0">#%% md 
+</span><span class="s2"># B.DataFrame Aggregation (25pts) 
+</span><span class="s0">#%% md 
+</span><span class="s2">## Intermediate 
+</span><span class="s0">#%% md 
+</span><span class="s2">### 4. Group By and Aggregate (10pts) 
+ 
+Dengan menggunakan data `titanic.csv`, buatlah dataframe untuk melihat informasi `max` dan `min` pada column `Age` dan juga informasi `mean` dan `median` pada column `Fare` pada masing-masing PassengerClass atau `Pclass`. 
+ 
+**Expected Result:** 
+ 
+![Expected Result](assets/homework_exercise_4_result.png) 
+</span><span class="s0">#%% 
+## Your code below here</span>
+<span class="s2">df4 = pd.read_csv(</span><span class="s3">'titanic.csv'</span><span class="s2">)</span>
+<span class="s2">df4</span>
+<span class="s0">#%% 
+</span><span class="s2">df4_aggretiation = df4.groupby(</span><span class="s3">'Pclass'</span><span class="s2">).agg({</span><span class="s3">'Age'</span><span class="s2">:[</span><span class="s3">'max'</span><span class="s2">,</span><span class="s3">'min'</span><span class="s2">], </span><span class="s3">'Fare'</span><span class="s2">:[</span><span class="s3">'mean'</span><span class="s2">,</span><span class="s3">'median'</span><span class="s2">]})</span>
+<span class="s2">df4_aggretiation</span>
+<span class="s0">#%% md 
+</span><span class="s2">### 5. Memanfaatkan Pivot Tabel (15pts) 
+ 
+Buatlah dataframe baru menggunakan fungsi pivot table untuk melihat `Embarked` apa saja yang `average_female_ticket_price` lebih besar daripada `average_male_ticket_price`. Informasi `average_female_ticket_price` dan `average_male_ticket_price` didapatkan dari rata-rata pada column `Fare`. 
+ 
+**Hint:** 
+1. menggunakan pivot table 
+2. dapat dilihat pada topik `DataFrame Aggregation` bagian `Pivot Table | Reshape Columns and Rows` 
+ 
+**Expected Result:** 
+ 
+![Expected Result](assets/homework_exercise_5_result.png) 
+</span><span class="s0">#%% 
+## Your code below here</span>
+<span class="s2">df5 = pd.read_csv(</span><span class="s3">'titanic.csv'</span><span class="s2">)</span>
+<span class="s2">df5</span>
+<span class="s0">#%% 
+</span><span class="s2">embark_modif = df5[df5[</span><span class="s3">'Embarked'</span><span class="s2">] != </span><span class="s3">'Q'</span><span class="s2">]</span>
+<span class="s2">df5_grouped = df5.groupby([</span><span class="s3">'Embarked'</span><span class="s2">,</span><span class="s3">'Sex'</span><span class="s2">]).agg({</span><span class="s3">'Fare'</span><span class="s2">:</span><span class="s3">'mean'</span><span class="s2">}).reset_index()</span>
+
+<span class="s2">df5_grouped</span>
+
+
+<span class="s0">#%% 
+</span><span class="s2">df5_pivot = pd.pivot_table(</span>
+    <span class="s2">df5_grouped,</span>
+    <span class="s2">index=[</span><span class="s3">'Embarked'</span><span class="s2">],</span>
+    <span class="s2">columns=[</span><span class="s3">'Sex'</span><span class="s2">],</span>
+    <span class="s2">values= [</span><span class="s3">'Fare'</span><span class="s2">]</span>
+<span class="s2">)</span>
+<span class="s2">df5_pivot = df5_pivot.reset_index()</span>
+<span class="s2">df5_pivot.columns = [</span><span class="s3">&quot;Embarked&quot;</span><span class="s2">,</span><span class="s3">&quot;avg_female_ticket_price&quot;</span><span class="s2">,</span><span class="s3">&quot;avg_male_ticket_price&quot;</span><span class="s2">]</span>
+<span class="s2">df5_pivot[df5_pivot[</span><span class="s3">'avg_female_ticket_price'</span><span class="s2">] &gt; df5_pivot[</span><span class="s3">'avg_male_ticket_price'</span><span class="s2">]]</span>
+<span class="s0">#%% md 
+</span>
+<span class="s2"># C. DataFrame Combination (30pts) 
+</span><span class="s0">#%% md 
+</span><span class="s2">## 6. Melakukan Append pada DataFrame (5pts) 
+ 
+Buatlah DataFrame seperti pada soal `no.1`. 
+ Kemudian tambahkan data tersebut dengan data users yang baru seperti gambar dibawah berikut. 
+ 
+**New Users Data:** 
+ 
+![Expected Result](assets/homework_exercise_6_new.png) 
+ 
+**Expected Result:** 
+ 
+![Expected Result](assets/homework_exercise_6_result.png) 
+</span><span class="s0">#%% 
+</span>
+<span class="s0">#%% 
+## Your code below here</span>
+<span class="s2">data = {</span>
+    <span class="s3">&quot;name&quot;</span><span class="s2">: [</span><span class="s3">&quot;ali&quot;</span><span class="s2">, </span><span class="s3">&quot;adit&quot;</span><span class="s2">],</span>
+    <span class="s3">&quot;age&quot;</span><span class="s2">: [</span><span class="s4">37</span><span class="s2">,</span><span class="s4">12</span><span class="s2">],</span>
+    <span class="s3">&quot;phone_number&quot;</span><span class="s2">: [</span><span class="s1">None</span><span class="s2">, </span><span class="s3">'+62152155'</span><span class="s2">],</span>
+    <span class="s3">&quot;ielts_score&quot;</span><span class="s2">: [</span><span class="s4">5.5</span><span class="s2">,</span><span class="s4">6.0</span><span class="s2">]</span>
+<span class="s2">}</span>
+<span class="s2">df6 = pd.DataFrame(data)</span>
+<span class="s2">df = df._append(df6,ignore_index=</span><span class="s1">True</span><span class="s2">)</span>
+<span class="s2">df</span>
+<span class="s0">#%% md 
+</span>
+<span class="s0">#%% md 
+</span><span class="s2">### 7. Merge DataFrame (25pts) 
+ 
+Buatlah 2 dataframe mengikuti petunjuk berikut: 
+ 
+df_1 :  Filter dataset 01 telecom_revenue.csv dengan multiple kondisi (5pts) 
+- MonthlyRevenue &gt; 10  
+- Occupation terdiri dari Professional, Student, and Crafts 
+ 
+df_2 :  Filter dataset 02 telecom_usage.csv dengan multiple kondisi (5pt) 
+- nilai UnansweredCalls &gt; BlockedCalls 
+ 
+Jawablah pertanyaan berikut ini: 
+1. Hitunglah total CustomerID dan rata-rata DroppedCalls untuk masing-masing occupation. (10 Points) 
+2. Pada occupation apa, rata-rata DroppedCalls paling besar? (5 Points) 
+ 
+**Expected Result:** 
+ 
+![Expected Result](assets/homework_exercise_7_result.png) 
+</span><span class="s0">#%% 
+## Your code below here</span>
+<span class="s2">df7a = pd.read_csv(</span><span class="s3">'01 telecom_revenue.csv'</span><span class="s2">)</span>
+<span class="s2">df7a</span>
+<span class="s0">#%% 
+</span><span class="s2">df7a_final= df7a[df7a[</span><span class="s3">'MonthlyRevenue'</span><span class="s2">] &gt; </span><span class="s4">10</span><span class="s2">][df7a[</span><span class="s3">'Occupation'</span><span class="s2">].isin([</span><span class="s3">'Professional'</span><span class="s2">,</span><span class="s3">'Student'</span><span class="s2">,</span><span class="s3">'Crafts'</span><span class="s2">])]</span>
+<span class="s2">df7a_final</span>
+<span class="s0">#%% 
+</span><span class="s2">df7b = pd.read_csv(</span><span class="s3">'02 telecom_usage.csv'</span><span class="s2">)</span>
+<span class="s2">df7b</span>
+<span class="s0">#%% 
+</span><span class="s2">df7b_final = df7b[df7b[</span><span class="s3">'UnansweredCalls'</span><span class="s2">] &gt; df7b[</span><span class="s3">'BlockedCalls'</span><span class="s2">]]</span>
+<span class="s2">df7b_final</span>
+<span class="s0">#%% 
+</span><span class="s2">df7c = df7a_final.merge(df7b_final, on = </span><span class="s3">'CustomerID'</span><span class="s2">)</span>
+<span class="s2">df7c</span>
+<span class="s0">#%% 
+# Nomor 7.1</span>
+<span class="s2">df7c_grouped = df7c.groupby(</span><span class="s3">'Occupation'</span><span class="s2">).agg({</span><span class="s3">'CustomerID'</span><span class="s2">:[</span><span class="s3">'nunique'</span><span class="s2">], </span><span class="s3">'DroppedCalls'</span><span class="s2">:[</span><span class="s3">'mean'</span><span class="s2">]})</span>
+<span class="s2">df7c_grouped</span>
+<span class="s0">#%% md 
+</span><span class="s2">### Nomor 7.2 
+Pada Occupation Studentlah rata-rata DroppedCalls paling besar 
+</span><span class="s0">#%% 
+</span></pre>
+</body>
+</html>

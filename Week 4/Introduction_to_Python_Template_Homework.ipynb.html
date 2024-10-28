@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>Introduction_to_Python_Template_Homework.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #5c6370; font-style: italic;}
+.s1 { color: #bbbbbb;}
+.s2 { color: #d55fde; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Introduction_to_Python_Template_Homework.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% md 
+</span><span class="s1"># Homework Introduction to Python 
+</span><span class="s0">#%% md 
+</span><span class="s1">$\textbf{Ubah nama di bawah yaa!}$ 
+</span><span class="s0">#%% md 
+</span><span class="s1">- Nama: Prof. Dr. Ir. H. M. Lutfi Hamid, MSc, PhD 
+- IPK / Nilai Rapot: 3.95 / 9.6 
+</span><span class="s0">#%% 
+</span><span class="s2">import </span><span class="s1">numpy </span><span class="s2">as </span><span class="s1">np</span>
+
+<span class="s0"># please import as much as you need</span>
+<span class="s0">#%% md 
+</span><span class="s1"># Normal 
+</span><span class="s0">#%% md 
+</span><span class="s1">## 1. Operasi Variabel 
+ 
+&gt; Misal kita memiliki toko sepatu. Modal membeli 1 kodi sepatu adalah Rp 1.000.000. Setiap sepatu dijual seharga Rp 80.000. Buatlah variabel modal, kuantitas, dan harga_jual sesuai informasi di atas. Hitung profit yang didapatkan jika semua sepatu berhasil terjual, dan masukkan ke variabel profit. 
+ 
+Saran langkah-langkah pengerjaan 
+1. Convert terlebih dahulu kodi dalam jumlah barang (1 kodi = xyz buah sepatu) 
+2. Gunakan operasi matematika sederhana untuk menghitung profit menggunakan tiga buah variabel yang sudah ditentukan 
+</span><span class="s0">#%% 
+# your code goes here!</span>
+
+<span class="s0">#%% md 
+</span><span class="s1">Jadi, dari profit di atas, dapat disimpulkan bahwa... 
+</span><span class="s0">#%% md 
+</span><span class="s1">## 2. Package Python dan Dictionary 
+ 
+&gt; Kita akan coba mengakses data scientific article dari PLOS corpus 
+    Menggunakan API request dengan kode berikut : 
+``` 
+import requests 
+response = requests.get('http://api.plos.org/search?q=title:&quot;Drosophila&quot; AND body:&quot;RNA&quot;&amp;fl=id,abstract') 
+``` 
+**perhatikan tanda kutipnya tidak salah ketika meng-copy ke dalam python 
+ 
+Pertanyaannya : 
+Convert response.content dari request tersebut dari JSON Format ke dalam Dictionary, dan print-kan key di dalamnya apa saja 
+ 
+Saran langkah-langkah pengerjaan 
+1. Ikuti code dari soal, kemudian ekstrak value dari variable response menggunakan dot (.) content menjadi sebuah variabel baru (dictionary) 
+2. Gunakan library json, convert hasil content menggunakan json.loads 
+3. Print keys dari dictionary tersebut 
+ 
+</span><span class="s0">#%% 
+# your code goes here!</span>
+
+<span class="s0">#%% md 
+</span><span class="s1">Jadi, dari url link di atas, kami menyimpulkan bahwa memiliki keys ... 
+</span><span class="s0">#%% md 
+</span><span class="s1"># Intermediate 
+</span><span class="s0">#%% md 
+</span><span class="s1">## 3. Operasi dalam List 
+ 
+&gt; Buatlah list dengan 10 nama kota di indonesia, kemudian: 
+1. Urutkan nama kota di dalam list berdasarkan abjad (a) 
+2. Ambil 4 kota pertama dari list tersebut (yang telah diurutkan) (b) 
+3. Ambil 3 kota terakhir dari list tersebut (yang telah diurutkan) (c) 
+ 
+Saran langkah-langkah pengerjaan 
+1. Tidak ada ketentuan nama kota (misal berdasarkan provinsi X atau pulau Y), dibebaskan untuk memilih. Buat nama-nama kota tersebut dalam sebuah list. 
+2. Gunakan fungsi sorted(X) untuk mengurutkan secara kecil-ke-besar (sesuai abjad), dimana X adalah contoh variabel list pada langkah (a) 
+3. Gunakan hasil poin (a), urutkan nama kota di dalam list berdasarkan abjad, untuk mengerjakan poin (b) dan (c). 
+</span><span class="s0">#%% 
+# your code goes here!</span>
+
+<span class="s0">#%% md 
+</span><span class="s1">Jadi, dari operasi list di atas, dapat disimpulkan bahwa... 
+</span><span class="s0">#%% md 
+</span><span class="s1">## 4. Function dalam List 
+ 
+&gt; Team sales memiliki list total transaksi dari 10 merchant pada bulan Juni 2020, yaitu: 
+``` 
+total_transaksi = [ 19, 35, 23, 25, 10, 15, 33, 45, 21, 30 ] 
+``` 
+1. Trx minimum 
+2. Rata-rata 
+3. Trx maksimal 
+ 
+Saran langkah-langkah pengerjaan 
+1. Copy variabel total_transaksi yang ada di soal ke notebook kita (atau ketik ulang boleh) 
+2. Kemudian, hitung menggunakan function operasi dalam list yang telah dipelajari di kelas pada topik list. Print hasilnya setiap poin (a), (b), dan (c) 
+</span><span class="s0">#%% 
+# your code goes here!</span>
+
+<span class="s0">#%% md 
+</span><span class="s1">Jadi, dari hasil operasi list di atas, dapat disimpulkan bahwa nilai minimal, max, rata-rata... 
+</span><span class="s0">#%% md 
+</span><span class="s1"># Advanced 
+</span><span class="s0">#%% md 
+</span><span class="s1">## 5. NumPy Array 
+ 
+&gt; Buatlah array dari 5 bilangan ganjil pertama (dimulai dari 1), Kemudian lakukan perintah berikut : 
+1. Kali-kan array tersebut dengan 10 
+2. Bagi-kan array (hasil dari bagian a) dengan 3 
+3. Kali-kan array (hasil dari bagian b) dengan array baru : 
+`[-45, 43, 3, 56, 5]` 
+4. Carilah pada index ke-berapa nilai tertinggi dan terendah dari array (hasil dari bagian c) 
+ 
+Saran langkah-langkah pengerjaan 
+1. HATI-HATI dalam pengerjaan, karena apabila poin sebelumnya salah, maka selanjutnya akan kebawa salah (misal (b) salah, maka poin (c) sampai (d) akan salah) 
+2. Untuk array 5 bilangan ganjil pertama boleh manual boleh menggunakan fungsi, dimulai dari 1 
+3. Ikuti perintah soal, gunakan numpy array, jangan list. Sesuaikan dengan permintaan soal pada setiap butir. 
+ 
+ 
+</span><span class="s0">#%% 
+# your code goes here!</span>
+
+<span class="s0">#%% md 
+</span><span class="s1">Jadi, dari hasil operasi numpy di atas, dapat disimpulkan bahwa... 
+</span><span class="s0">#%% md 
+</span><span class="s1"># Terimakasih, salam dari ... (asal daerah Anda)</span></pre>
+</body>
+</html>

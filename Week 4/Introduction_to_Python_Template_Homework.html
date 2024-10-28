@@ -1,0 +1,355 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "blenv3",
+      "language": "python",
+      "name": "blenv3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.6.8"
+    },
+    "toc": {
+      "base_numbering": 1,
+      "nav_menu": {},
+      "number_sections": true,
+      "sideBar": true,
+      "skip_h1_title": false,
+      "title_cell": "Table of Contents",
+      "title_sidebar": "Contents",
+      "toc_cell": false,
+      "toc_position": {},
+      "toc_section_display": true,
+      "toc_window_display": true
+    },
+    "colab": {
+      "provenance": []
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "heading_collapsed": true,
+        "id": "IQZPHNVGE0jj"
+      },
+      "source": [
+        "# Homework Introduction to Python"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "hidden": true,
+        "id": "yKMR8ypqE0jn"
+      },
+      "source": [
+        "$\\textbf{Ubah nama di bawah yaa!}$"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "hidden": true,
+        "id": "bQ7VJlKEE0jo"
+      },
+      "source": [
+        "- Nama: Prof. Dr. Ir. H. M. Lutfi Hamid, MSc, PhD\n",
+        "- IPK / Nilai Rapot: 3.95 / 9.6"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "ExecuteTime": {
+          "end_time": "2020-11-12T13:26:22.209983Z",
+          "start_time": "2020-11-12T13:26:21.360470Z"
+        },
+        "hidden": true,
+        "id": "4g2oLkevE0jo"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# please import as much as you need"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "cgd-tTOjE0jr"
+      },
+      "source": [
+        "# Normal"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "heading_collapsed": true,
+        "id": "ed8OiWGeE0jr"
+      },
+      "source": [
+        "## 1. Operasi Variabel\n",
+        "\n",
+        "> Misal kita memiliki toko sepatu. Modal membeli 1 kodi sepatu adalah Rp 1.000.000. Setiap sepatu dijual seharga Rp 80.000. Buatlah variabel modal, kuantitas, dan harga_jual sesuai informasi di atas. Hitung profit yang didapatkan jika semua sepatu berhasil terjual, dan masukkan ke variabel profit.\n",
+        "\n",
+        "Saran langkah-langkah pengerjaan\n",
+        "1. Convert terlebih dahulu kodi dalam jumlah barang (1 kodi = xyz buah sepatu)\n",
+        "2. Gunakan operasi matematika sederhana untuk menghitung profit menggunakan tiga buah variabel yang sudah ditentukan"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "ExecuteTime": {
+          "end_time": "2021-10-23T10:20:16.843127Z",
+          "start_time": "2021-10-23T10:20:16.835236Z"
+        },
+        "hidden": true,
+        "scrolled": true,
+        "id": "ThOB9tEME0js"
+      },
+      "source": [
+        "# your code goes here!\n"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "hidden": true,
+        "id": "8GaDbS89E0js"
+      },
+      "source": [
+        "Jadi, dari profit di atas, dapat disimpulkan bahwa..."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5oTZCAI4E0ju"
+      },
+      "source": [
+        "## 2. Package Python dan Dictionary\n",
+        "\n",
+        "> Kita akan coba mengakses data scientific article dari PLOS corpus\n",
+        "    Menggunakan API request dengan kode berikut :\n",
+        "```\n",
+        "import requests\n",
+        "response = requests.get('http://api.plos.org/search?q=title:\"Drosophila\" AND body:\"RNA\"&fl=id,abstract')\n",
+        "```\n",
+        "**perhatikan tanda kutipnya tidak salah ketika meng-copy ke dalam python\n",
+        "\n",
+        "Pertanyaannya :\n",
+        "Convert response.content dari request tersebut dari JSON Format ke dalam Dictionary, dan print-kan key di dalamnya apa saja\n",
+        "\n",
+        "Saran langkah-langkah pengerjaan\n",
+        "1. Ikuti code dari soal, kemudian ekstrak value dari variable response menggunakan dot (.) content menjadi sebuah variabel baru (dictionary)\n",
+        "2. Gunakan library json, convert hasil content menggunakan json.loads\n",
+        "3. Print keys dari dictionary tersebut\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "ExecuteTime": {
+          "end_time": "2021-10-23T10:20:40.890513Z",
+          "start_time": "2021-10-23T10:20:40.882963Z"
+        },
+        "id": "RY1kdZAUE0ju"
+      },
+      "source": [
+        "# your code goes here!\n"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "rvQnd_NgE0jv"
+      },
+      "source": [
+        "Jadi, dari url link di atas, kami menyimpulkan bahwa memiliki keys ..."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wWstgpwIPDwR"
+      },
+      "source": [
+        "# Intermediate"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "AI0lJNgDE0jv"
+      },
+      "source": [
+        "## 3. Operasi dalam List\n",
+        "\n",
+        "> Buatlah list dengan 10 nama kota di indonesia, kemudian:\n",
+        "1. Urutkan nama kota di dalam list berdasarkan abjad (a)\n",
+        "2. Ambil 4 kota pertama dari list tersebut (yang telah diurutkan) (b)\n",
+        "3. Ambil 3 kota terakhir dari list tersebut (yang telah diurutkan) (c)\n",
+        "\n",
+        "Saran langkah-langkah pengerjaan\n",
+        "1. Tidak ada ketentuan nama kota (misal berdasarkan provinsi X atau pulau Y), dibebaskan untuk memilih. Buat nama-nama kota tersebut dalam sebuah list.\n",
+        "2. Gunakan fungsi sorted(X) untuk mengurutkan secara kecil-ke-besar (sesuai abjad), dimana X adalah contoh variabel list pada langkah (a)\n",
+        "3. Gunakan hasil poin (a), urutkan nama kota di dalam list berdasarkan abjad, untuk mengerjakan poin (b) dan (c)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "ExecuteTime": {
+          "end_time": "2021-10-23T10:20:47.306584Z",
+          "start_time": "2021-10-23T10:20:47.299827Z"
+        },
+        "scrolled": true,
+        "id": "piGxWfIAE0jw"
+      },
+      "source": [
+        "# your code goes here!\n"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "FpbGs5EaE0jw"
+      },
+      "source": [
+        "Jadi, dari operasi list di atas, dapat disimpulkan bahwa..."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6nanVjCCE0jx"
+      },
+      "source": [
+        "## 4. Function dalam List\n",
+        "\n",
+        "> Team sales memiliki list total transaksi dari 10 merchant pada bulan Juni 2020, yaitu:\n",
+        "```\n",
+        "total_transaksi = [ 19, 35, 23, 25, 10, 15, 33, 45, 21, 30 ]\n",
+        "```\n",
+        "1. Trx minimum\n",
+        "2. Rata-rata\n",
+        "3. Trx maksimal\n",
+        "\n",
+        "Saran langkah-langkah pengerjaan\n",
+        "1. Copy variabel total_transaksi yang ada di soal ke notebook kita (atau ketik ulang boleh)\n",
+        "2. Kemudian, hitung menggunakan function operasi dalam list yang telah dipelajari di kelas pada topik list. Print hasilnya setiap poin (a), (b), dan (c)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "ExecuteTime": {
+          "end_time": "2021-10-23T10:20:52.903045Z",
+          "start_time": "2021-10-23T10:20:52.894900Z"
+        },
+        "scrolled": true,
+        "id": "HxvjrB2RE0jx"
+      },
+      "source": [
+        "# your code goes here!\n"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "UgHXbAOqE0jx"
+      },
+      "source": [
+        "Jadi, dari hasil operasi list di atas, dapat disimpulkan bahwa nilai minimal, max, rata-rata..."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "f4EkwISgE0jx"
+      },
+      "source": [
+        "# Advanced"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fmaX-pu5E0jy"
+      },
+      "source": [
+        "## 5. NumPy Array\n",
+        "\n",
+        "> Buatlah array dari 5 bilangan ganjil pertama (dimulai dari 1), Kemudian lakukan perintah berikut :\n",
+        "1. Kali-kan array tersebut dengan 10\n",
+        "2. Bagi-kan array (hasil dari bagian a) dengan 3\n",
+        "3. Kali-kan array (hasil dari bagian b) dengan array baru :\n",
+        "`[-45, 43, 3, 56, 5]`\n",
+        "4. Carilah pada index ke-berapa nilai tertinggi dan terendah dari array (hasil dari bagian c)\n",
+        "\n",
+        "Saran langkah-langkah pengerjaan\n",
+        "1. HATI-HATI dalam pengerjaan, karena apabila poin sebelumnya salah, maka selanjutnya akan kebawa salah (misal (b) salah, maka poin (c) sampai (d) akan salah)\n",
+        "2. Untuk array 5 bilangan ganjil pertama boleh manual boleh menggunakan fungsi, dimulai dari 1\n",
+        "3. Ikuti perintah soal, gunakan numpy array, jangan list. Sesuaikan dengan permintaan soal pada setiap butir.\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "ExecuteTime": {
+          "end_time": "2021-10-23T10:20:59.988806Z",
+          "start_time": "2021-10-23T10:20:59.980744Z"
+        },
+        "scrolled": true,
+        "id": "VTTOjU8wE0jy"
+      },
+      "source": [
+        "# your code goes here!\n"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wTkMvK_EE0jy"
+      },
+      "source": [
+        "Jadi, dari hasil operasi numpy di atas, dapat disimpulkan bahwa..."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "LLIlxgN3Pmwj"
+      },
+      "source": [
+        "# Terimakasih, salam dari ... (asal daerah Anda)"
+      ]
+    }
+  ]
+}
